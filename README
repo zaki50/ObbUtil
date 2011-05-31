@@ -1,0 +1,31 @@
+これは、Android の Storage API で使用する OBB ファイルを作成するためのプログラムです。
+Java の実行環境が必要です。
+実行する OS により起動方法が異なります。
+
+MacOS X/Linux の場合:
+ 以下の使い方の記述で、 ObbUtil となっている部分を、 ./ObbUtil としてください。
+Windows の場合:
+ 以下の使い方の記述で、 ObbUtil となっている部分を、 java -jar ObbUtil.jar jp.andeb.obbutil.ObbUtilMain としてください。
+
+使い方:
+ ObbUtil a[dd] [ オプション ] 対象ファイル
+   OBB 情報をファイルに追加します。
+   オプション:
+     -n <package name>      パッケージ名(必須)
+     -v <package version>   パッケージバージョン(必須)
+     -o                     OBB オーバーレイフラグをセット
+     -s <8 byte hex salt>   暗号化で使用しているソルト(例: 00FF3256F9890092)
+
+ ObbUtil r[emove] 対象ファイル
+   OBB 情報をファイルから削除します。
+
+ ObbUtil i[nfo] 対象ファイル
+   ファイルの OBB 情報を表示します。
+
+
+例1: ディスクイメージに OBB 情報を付加する
+ ObbUtil add -n jp.andeb.somepackage -v 1 some.img
+例2: OBB ファイルを通常のディスクイメージに戻す
+ ObbUtil remove  some.img
+例3: OBB ファイル中の OB 情報を表示する
+ ObbUtil info some.img
