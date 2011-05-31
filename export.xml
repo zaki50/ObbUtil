@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project ObbUtil">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/zaki/fromgit/ObbUtil/ObbUtil.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="jp.andeb.obbutil.ObbUtilMain"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/Users/zaki/fromgit/ObbUtil/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/zaki/fromgit/ObbUtil/libs/commons-cli-1.2/commons-cli-1.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Applications/eclipse-java-helios-SR2-macosx-cocoa-x86_64/plugins/org.junit_4.8.1.v4_8_1_v20100427-1100/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Applications/eclipse-java-helios-SR2-macosx-cocoa-x86_64/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+        </jar>
+    </target>
+</project>
