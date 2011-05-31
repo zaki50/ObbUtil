@@ -152,7 +152,14 @@ public class ObbUtilMain {
                 // 正常系
             }
 
-            final ObbInfoV1 obbInfo = new ObbInfoV1(isOverlay ? ObbInfoV1.FLAG_OVERLAY : 0, salt,
+            int flag = 0;
+            if (isOverlay) {
+                flag |= ObbInfoV1.FLAG_OVERLAY;
+            }
+            if (salt != null) {
+                flag |= ObbInfoV1.FLAG_SALTED;
+            }
+            final ObbInfoV1 obbInfo = new ObbInfoV1(flag, salt,
                     pkgName,
                     version.intValue());
             final ByteBuffer obbInfoBytes = obbInfo.toBytes();

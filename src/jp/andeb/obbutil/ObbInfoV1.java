@@ -55,17 +55,15 @@ public class ObbInfoV1 {
      * 指定された情報で {@link ObbInfoV1} を構築します。
      * 
      * @param flags フラグセット。
-     * @param salt ソルト。{@code null} の場合はソルトなしとして扱います。
+     * @param salt ソルト。
      * @param packageName パッケージ名。
      * @param packageVersion パッケージバージョン。
      */
     public ObbInfoV1(int flags, byte[] salt, String packageName, int packageVersion) {
         super();
         if (salt == null) {
-            flags &= ~FLAG_SALTED;
             this.salt_ = new byte[SALT_LENGTH];
         } else {
-            flags |= FLAG_SALTED;
             if (salt.length != SALT_LENGTH) {
                 throw new IllegalArgumentException("length of 'salt' must be " + SALT_LENGTH);
             }
