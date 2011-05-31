@@ -1,6 +1,8 @@
 これは、Android の Storage API で使用する OBB ファイルを作成するためのプログラムです。
-Java の実行環境が必要です。
-実行する OS により起動方法が異なります。
+
+最新のソースコードは https://github.com/zaki50/ObbUtil から取得可能です。
+
+実行には Java が必要です。また、OS により起動方法が異なります。
 
 MacOS X/Linux の場合:
  以下の使い方の記述で、 ObbUtil となっている部分を、 ./ObbUtil としてください。
