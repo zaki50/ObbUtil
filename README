@@ -1,33 +1,33 @@
-����́AAndroid �� Storage API �Ŏg�p���� OBB �t�@�C�����쐬���邽�߂̃v���O�����ł��B
+これは、Android の Storage API で使用する OBB ファイルを作成するためのプログラムです。
 
-�ŐV�̃\�[�X�R�[�h�� https://github.com/zaki50/ObbUtil ����擾�\�ł��B
+最新のソースコードは https://github.com/zaki50/ObbUtil から取得可能です。
 
-���s�ɂ� Java ���K�v�ł��B�܂��AOS �ɂ��N�����@���قȂ�܂��B
+実行には Java が必要です。また、OS により起動方法が異なります。
 
-MacOS X/Linux �̏ꍇ:
- �ȉ��̎g�����̋L�q�ŁA ObbUtil �ƂȂ��Ă��镔�����A ./ObbUtil �Ƃ��Ă��������B
-Windows �̏ꍇ:
- �ȉ��̎g�����̋L�q�ŁA ObbUtil �ƂȂ��Ă��镔�����A java -jar ObbUtil.jar �Ƃ��Ă��������B
+MacOS X/Linux の場合:
+ 以下の使い方の記述で、 ObbUtil となっている部分を、 ./ObbUtil としてください。
+Windows の場合:
+ 以下の使い方の記述で、 ObbUtil となっている部分を、 java -jar ObbUtil.jar としてください。
 
-�g����:
- ObbUtil a[dd] [ �I�v�V���� ] �Ώۃt�@�C��
-   OBB �����t�@�C���ɒǉ����܂��B
-   �I�v�V����:
-     -n <package name>      �p�b�P�[�W��(�K�{)
-     -v <package version>   �p�b�P�[�W�o�[�W����(�K�{)
-     -o                     OBB �I�[�o�[���C�t���O���Z�b�g
-     -s <8 byte hex salt>   �Í����Ŏg�p���Ă���\���g(��: 00FF3256F9890092)
+使い方:
+ ObbUtil a[dd] [ オプション ] 対象ファイル
+   OBB 情報をファイルに追加します。
+   オプション:
+     -n <package name>      パッケージ名(必須)
+     -v <package version>   パッケージバージョン(必須)
+     -o                     OBB オーバーレイフラグをセット
+     -s <8 byte hex salt>   暗号化で使用しているソルト(例: 00FF3256F9890092)
 
- ObbUtil r[emove] �Ώۃt�@�C��
-   OBB �����t�@�C������폜���܂��B
+ ObbUtil r[emove] 対象ファイル
+   OBB 情報をファイルから削除します。
 
- ObbUtil i[nfo] �Ώۃt�@�C��
-   �t�@�C���� OBB ����\�����܂��B
+ ObbUtil i[nfo] 対象ファイル
+   ファイルの OBB 情報を表示します。
 
 
-��1: �f�B�X�N�C���[�W�� OBB ����t������
+例1: ディスクイメージに OBB 情報を付加する
  ObbUtil add -n jp.andeb.somepackage -v 1 some.img
-��2: OBB �t�@�C����ʏ�̃f�B�X�N�C���[�W�ɖ߂�
+例2: OBB ファイルを通常のディスクイメージに戻す
  ObbUtil remove  some.img
-��3: OBB �t�@�C������ OB ����\������
+例3: OBB ファイル中の OB 情報を表示する
  ObbUtil info some.img
