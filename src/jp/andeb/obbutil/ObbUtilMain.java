@@ -172,6 +172,7 @@ public class ObbUtilMain {
                 return false;
             }
         }
+        System.err.println("OBB 情報の書き込みが正常に完了しました: " + targetFile.getPath());
         return true;
     }
 
