@@ -5,7 +5,7 @@ Java の実行環境が必要です。
 MacOS X/Linux の場合:
  以下の使い方の記述で、 ObbUtil となっている部分を、 ./ObbUtil としてください。
 Windows の場合:
- 以下の使い方の記述で、 ObbUtil となっている部分を、 java -jar ObbUtil.jar jp.andeb.obbutil.ObbUtilMain としてください。
+ 以下の使い方の記述で、 ObbUtil となっている部分を、 java -jar ObbUtil.jar としてください。
 
 使い方:
  ObbUtil a[dd] [ オプション ] 対象ファイル
